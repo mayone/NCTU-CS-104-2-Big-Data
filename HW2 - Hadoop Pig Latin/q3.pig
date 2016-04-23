@@ -34,5 +34,15 @@ Table = FILTER Table BY Year != 'Year';
 DelayData = FOREACH Table GENERATE Year, Month, ArrDelay+DepDelay AS Delay;
 YearMonth = GROUP DelayData BY (Year, Month);
 MonthDelay = FOREACH YearMonth GENERATE FLATTEN(group) AS (Year, Month), AVG(DelayData.Delay) AS AvgDelay;
+/*
 MonthDelay = ORDER MonthDelay BY Year, AvgDelay;
 DUMP MonthDelay;
+*/
+
+YearGroup = GROUP MonthDelay BY Year;
+MinDelay = FOREACH YearGroup {
+	MonthDelay = ORDER MonthDelay BY AvgDelay;
+	MinDelay = LIMIT MonthDelay 1;
+	GENERATE FLATTEN(MinDelay);
+} 
+DUMP MinDelay;
