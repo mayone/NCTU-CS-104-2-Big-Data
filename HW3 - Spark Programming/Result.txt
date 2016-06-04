@@ -1,0 +1,56 @@
+Result
+
+1: 43216360
+2: 25452304
+3: 251098
+4: 87115
+5: 10
+
+time spark-submit --master local taxiPaymentTypeCount.py > output.txt
+
+real    7m34.688s
+user    2m10.564s
+sys     0m21.522s
+
+time spark-submit --master local[8] taxiPaymentTypeCount.py > output.txt
+
+real    1m11.777s
+user    2m13.162s
+sys     0m16.909s
+
+time spark-submit --master local[16] taxiPaymentTypeCount.py > output.txt
+
+real    0m50.098s
+user    3m10.478s
+sys     0m46.309s
+
+
+time spark-submit --master local[32] taxiPaymentTypeCount.py > output.txt
+
+real    0m43.667s
+user    2m50.776s
+sys     0m17.998s
+
+time spark-submit --master local[*] taxiPaymentTypeCount.py > output.txt
+
+real    0m42.305s
+user    2m46.101s
+sys     0m17.947s
+
+time spark-submit taxiPaymentTypeCount.py > output.txt
+
+real    0m42.107s
+user    0m40.015s
+sys     0m2.653s
+
+time spark-submit --master yarn-client taxiPaymentTypeCount.py > output.txt
+
+real    0m42.818s
+user    0m35.454s
+sys     0m2.532s
+
+time spark-submit --master yarn-cluster taxiPaymentTypeCount.py
+
+real    0m40.817s
+user    0m13.935s  
+sys     0m12.063s
