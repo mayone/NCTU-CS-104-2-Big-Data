@@ -4,11 +4,11 @@
 
 - Goal: Practice Spark programming on Hadoop platform
 
-- 1. Implement a "word count" program. You can find the example on [Spark webpage](http://spark.apache.org/examples.html).
+- 1: Implement a "word count" program. You can find the example on [Spark webpage](http://spark.apache.org/examples.html).
 
-- 2. Modify the "word count" program to count numbers for each "Payment_type" in the Taxi dataset and show a chart for counting result.
+- 2: Modify the "word count" program to count numbers for each "Payment_type" in the Taxi dataset and show a chart for counting result.
 
-- 3. Compare the execution time on local worker and yarn cluster and give some discussion in your observation. You can find some information about those two modes [here](http://spark.apache.org/docs/latest/submitting-applications.html)
+- 3: Compare the execution time on local worker and yarn cluster and give some discussion in your observation. You can find some information about those two modes [here](http://spark.apache.org/docs/latest/submitting-applications.html)
 
 ##Dataset
 
