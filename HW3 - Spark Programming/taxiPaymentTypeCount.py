@@ -7,7 +7,7 @@ from operator import add
 from pyspark import SparkContext  
 
 
-if __name__ == "__main__":  
+if __name__ == "__main__":
     sc = SparkContext(appName="TaxiPaymentTypeCount")
     filePath = "yellow"
     lines = sc.textFile(filePath, 1)
